@@ -57,7 +57,7 @@ namespace ImageWaterMark
         {
             int GradientSize = Config.GetInt("color", "size", 400);
 
-            LinearGradientBrush brush = new LinearGradientBrush(new Point(0, 0), new Point(GradientSize, 0), Color.Black, Color.Black);
+            LinearGradientBrush brush = new LinearGradientBrush(new Point(0, 0), new Point(GradientSize, 0), Color.White, Color.White);
             ColorBlend cb = new ColorBlend();
             cb.Colors = new[] { color1, color2, color1 };
             cb.Positions = new[] { 0f, 0.5f, 1f };
@@ -78,7 +78,7 @@ namespace ImageWaterMark
             Color c2 = Color.FromArgb(alpha, valMax, valMin, valMax);
             Color c3 = Color.FromArgb(alpha, valMax, valMax, valMin);
 
-            LinearGradientBrush brush = new LinearGradientBrush(new Point(0, 0), new Point(GradientSize, 0), Color.Black, Color.Black);
+            LinearGradientBrush brush = new LinearGradientBrush(new Point(0, 0), new Point(GradientSize, 0), Color.White, Color.White);
             ColorBlend cb = new ColorBlend();
             cb.Colors = new[] { c1, c2, c3, c1 };
             cb.Positions = new[] { 0f, 0.33f, 0.66f, 1f };
