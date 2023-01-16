@@ -31,10 +31,17 @@ namespace ImageWaterMark
                         iTextSharp.text.Image pic = iTextSharp.text.Image.GetInstance(image, dotnetIamge.Imaging.ImageFormat.Jpeg);
 
                         float percentage;
-                        percentage = _A4.Height / pic.Height;
-                        pic.ScalePercent(percentage * 100);
-                        percentage = _A4.Width / pic.Width;
-                        pic.ScalePercent(percentage * 100);
+                        if (pic.Height > _A4.Height)
+                        {
+                            percentage = _A4.Height / pic.Height;
+                            pic.ScalePercent(percentage * 100);
+                        }
+
+                        if (pic.Width > _A4.Width)
+                        {
+                            percentage = _A4.Width / pic.Width;
+                            pic.ScalePercent(percentage * 100);
+                        }
                         
                         document.Add(pic);
                         document.NewPage();
